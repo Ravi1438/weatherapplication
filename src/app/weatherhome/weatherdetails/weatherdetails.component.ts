@@ -22,7 +22,7 @@ export class WeatherdetailsComponent implements OnInit {
     if (cityname == "") {
       this.route.navigate(["/home"]);
     }
-    var url = this.baseUrl + "forecast?q=" + cityname + "&appid=13d8b309701a13f65b660fa2c64cdc517&units=metric";
+    var url = this.baseUrl + "forecast?q=" + cityname + "&appid=3d8b309701a13f65b660fa2c64cdc517&units=metric";
     // var url = this.baseUrl + "forecast/daily?q=" + cityname + "&appid=0d82ab68f2c379a4b829896547582b52&units=metric&cnt=6";;
     this.http.get(url).subscribe((res: any) => {
       if(res&&res!=""&&res!=null){
