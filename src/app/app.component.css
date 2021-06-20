@@ -1,0 +1,144 @@
+@media screen and (min-width: 768px) {
+    .weather-by-hour {
+      display: block;
+    }
+  }
+  .forecastwidget {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 14px;
+    background-color:#ffffff;
+    margin:10px;
+    border-radius: 7px;
+}
+/* //basic days rules - used for both horizontal and vertical layout */
+.forecastwidget .days {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex: 1;
+    overflow: hidden;
+}
+/* //vertical layout overrides the orientation of the days */
+.forecastwidget .days.vertical {
+    flex-direction: column;
+    font-size: 1.2em;
+}
+/* //define a grid layout with two columns */
+        .forecastwidget .days .day {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            
+            justify-content: center;
+            align-items: center;
+            padding: 0px 5px;
+            font-size: 0.9em;
+            justify-items: center;
+            grid-gap: 1px;
+        }   
+
+        /* //most forecast elements take up two columns */
+        .forecastwidget .days .day * {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* //maximum and minimum elements are arrange side by side */
+        .forecastwidget .days .day .maxt {
+            grid-column: 1 ;
+        }
+        .forecastwidget .days .day .mint {
+            grid-column: 2 ;
+        }
+         /*define a grid layout with two columns*/
+         .forecastwidget .days .day {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            
+            justify-content: center;
+            align-items: center;
+            padding: 0px 5px;
+            font-size: 0.9em;
+            justify-items: center;
+            grid-gap: 1px;
+        }   
+
+        /*most forecast elements take up two columns*/
+        .forecastwidget .days .day * {
+            grid-column: span 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /*maximum and minimum elements are arrange side by side*/
+        .forecastwidget .days .day .maxt {
+            grid-column: 1 ;
+        }
+        .forecastwidget .days .day .mint {
+            grid-column: 2 ;
+        }
+        /*define a grid layout with size columns*/
+        .forecastwidget .days.vertical .day {
+            grid-template-columns: 50px 30px 30px 30px 60px auto;
+            grid-gap: 4px;
+            justify-content: start;
+            margin: 2px 0px;
+            padding: 4px 0px;
+        }
+        /*Every element takes up a single grid cell*/
+        .forecastwidget .days.vertical .day * {
+            grid-column: span 1;
+        }
+         /*No special layout is required for the temperature values*/
+        .forecastwidget .days.vertical .day .maxt,  .forecastwidget .days.vertical .day .mint  {
+            grid-column: default ;
+        }
+         /*element styling rules*/
+         .forecastwidget .location {
+            font-size: 1em;
+            font-weight: bold;
+            flex:0;
+        }
+        .forecastwidget .footer {
+            font-size: 0.7em;
+            color:darkgrey;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .forecastwidget .days .day .date {
+            color:darkgrey;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+
+        .forecastwidget .days .day:not(:last-child) {
+            border-right:1px solid darkgray;
+        }
+
+        .forecastwidget .days.vertical .day:not(:last-child) {
+            border-right:none;
+            border-bottom:1px solid darkgray;
+        }
+
+        .forecastwidget .days .day .conditions {
+            display:none;
+            color:darkgrey;
+            font-size: 0.9em;
+        }
+        .forecastwidget .days.vertical .day .conditions {
+            display:block;
+        }
+        .forecastwidget .days .day  .maxt {
+            font-weight: bold;
+        }
+        .forecastwidget .days .day  .mint {
+            font-size: 0.9em;
+            color:darkgrey;
+        }
+       
+        .forecastwidget .days .day  .hidden {
+           visibility: hidden;
+        }

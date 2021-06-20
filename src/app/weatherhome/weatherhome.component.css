@@ -1,0 +1,44 @@
+.col-1 {
+    display: inline-block;
+    width: 40%;
+  }
+  
+  .col-1 h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 22px;
+  }
+  
+  .col-2 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    text-align: right;
+  }
+  
+  .temperature {
+    font-size: 22px;
+    font-weight: bolder;
+    padding-left: 53px;
+  }
+  
+  .weather-element {
+    /* box-shadow: 1px 1px 6px #CCC; */
+    box-shadow: 0px 0px 15px #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #dbe3e8;
+    border-radius: 8px
+    /* width:500px; */
+    /* padding-top: 10px; */
+    }
+    .weather-list {
+        margin: 20px auto;
+        width: 40%;
+        font-display: black;
+      }
+      .container{
+        padding-left: 10px;
+        padding-top: 10px;
+      }

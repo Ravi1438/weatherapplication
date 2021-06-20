@@ -1,0 +1,33 @@
+
+
+<div class="container">
+  <section class="weather-list">
+    <div class="col-3">
+      <h3 class="title">Weather Info Application </h3>
+      <span class="loader" *ngIf="cityData.length==0">Loading</span>
+    </div>
+    <a *ngFor="let data of cityData">
+      <article class="weather-element" (click)="GotoDetails(data)">
+        <div class="col-1">
+          <h3>{{data.name}}</h3>
+          <!-- <p class="info">Sun Rise:06:00am</p>
+          <p class="info">Sun Set:10:00pm</p> -->
+          <div>
+            <div class="current-stats__value">{{ShowDateTime(data.sys.sunrise,data.timezone,"summery")}}</div>
+            <div class="current-stats__label">Sunrise</div>
+            <div class="current-stats__value">{{ShowDateTime(data.sys.sunset,data.timezone,"summery")}}</div>
+            <div class="current-stats__label">Sunset</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <span class="temperature"> {{RoundDegrees(data.main.temp)}}&deg;</span>
+          <div class="current-temperature">
+            <i class="wi wi-night-sleet"></i>
+            <img src="{{SetImage(data)}}" class="current-temperature__icon" alt="">
+          </div>
+          <span>{{GetWeatherDescription(data.weather[0].description)}}</span>
+        </div>
+      </article>
+    </a>
+  </section>
+</div>

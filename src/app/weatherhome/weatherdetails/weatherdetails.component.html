@@ -1,0 +1,87 @@
+
+
+<main class="main-container">
+  <!-- <span class="home-btn">Primary</span> -->
+  <div class="location-and-date">
+    <h1 class="location-and-date__location">{{homeData!=undefined?homeData.name:""}}</h1>
+    <div>{{ShowDateTime(homeData.dt,"","totaldate")}}</div>
+  </div>
+
+
+  <div class="current-temperature">
+    <div class="current-temperature__icon-container">
+      <img src="{{SetImage(homeData)}}" class="current-temperature__icon" alt="">
+    </div>
+    <div class="current-temperature__content-container">
+      <div class="current-temperature__value">{{Round(homeData.main.temp)}}&deg;</div>
+      <div class="current-temperature__summary">{{homeData.weather[0].description}}</div>
+    </div>
+  </div>
+
+
+  <div class="current-stats">
+    <div>
+      <div class="current-stats__value">{{Round(homeData.main.temp_max)}}&deg;</div>
+      <div class="current-stats__label">High</div>
+      <div class="current-stats__value">{{Round(homeData.main.temp_min)}}&deg;</div>
+      <div class="current-stats__label">Low</div>
+    </div>
+    <div>
+      <div class="current-stats__value">{{Round(homeData.wind.speed)}}mph</div>
+      <div class="current-stats__label">Wind</div>
+      <div class="current-stats__value">{{Round(homeData.main.humidity)}}%</div>
+      <div class="current-stats__label">humidity</div>
+    </div>
+    <div>
+      <div class="current-stats__value">{{ShowDateTime(homeData.sys.sunrise,homeData.timezone,"summery")}}</div>
+      <div class="current-stats__label">Sunrise</div>
+      <div class="current-stats__value">{{ShowDateTime(homeData.sys.sunset,homeData.timezone,"summery")}}</div>
+      <div class="current-stats__label">Sunset</div>
+    </div>
+  </div>
+
+
+  <div class="next-5-days">
+    <h2 class="next-5-days__heading">Next 5 days</h2><br>
+    <h3 class="loader" *ngIf="fiveDaysData.length == 0">Loading</h3>
+    <div class="next-5-days__container">
+
+      <div class="next-5-days__row" *ngFor="let data of fiveDaysData">
+
+        <div class="next-5-days__date">
+          {{ShowDateTime(data.dt,"","weekdayname")}}
+          <div class="next-5-days__label">{{ShowDateTime(data.dt,"","daysdetails")}}</div>
+        </div>
+
+        <div class="next-5-days__low">
+          {{Round(data.main.temp_min)}}&deg;
+          <div class="next-5-days__label">Low</div>
+        </div>
+
+        <div class="next-5-days__high">
+          {{Round(data.main.temp_max)}}&deg;
+          <div class="next-5-days__label">High</div>
+        </div>
+
+        <div class="next-5-days__icon">
+          <img src="{{SetImage(data)}}" alt="Sunny">
+        </div>
+
+        <div class="next-5-days__rain">
+          {{data.main.sea_level}}
+          <div class="next-5-days__label">Sea-Level</div>
+        </div>
+
+        <div class="next-5-days__wind">
+          {{Round(data.wind.speed)}}mph
+          <div class="next-5-days__label">Wind</div>
+        </div>
+
+      </div>
+     
+    </div>
+  </div>
+
+</main>
+
+<!-- <router-outlet></router-outlet> -->
