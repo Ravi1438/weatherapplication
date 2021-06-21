@@ -10,7 +10,9 @@ Download this Code and build and run the code.
 
 For Api key used in project.When we deploy in live environment we can keep APi key in DB and fetch it from DB.
 
+## node_modules
 node_modules not included in the project. Kindly use basic node modules to run the project.
 use below command to add Toaster one module to project.
+
 npm install --save toastr
 
